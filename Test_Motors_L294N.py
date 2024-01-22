@@ -23,7 +23,7 @@ pwm = GPIO.PWM(ENAL, 1000)
 pwm = GPIO.PWM(ENAR, 1000)
 
 # Start the PWM with a duty cycle of 50%
-pwm.start(300)
+pwm.start(80)
 
 # Set the motor direction (clockwise or counterclockwise)
 GPIO.output(IN1L, GPIO.HIGH)
