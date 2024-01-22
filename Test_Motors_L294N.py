@@ -9,6 +9,7 @@ IN1 = 17
 IN2 = 27
 ENA = 22
 
+
 # Set the motor pins as output
 GPIO.setup(IN1, GPIO.OUT)
 GPIO.setup(IN2, GPIO.OUT)
