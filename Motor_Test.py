@@ -10,7 +10,7 @@ tsample = 0.01  # Sampling period for code execution (s)
 
 # Creating motor object using GPIO pins 16, 17, and 18
 # (using SN754410 quadruple half-H driver chip)
-mymotor = Motor(enable1=16, pwm1=17, pwm2=18)
+mymotor = Motor(enable1=17, pwm1=27, pwm2=22)
 
 # Initializing current time stamp and starting clock
 tprev = 0
