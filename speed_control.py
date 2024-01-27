@@ -75,6 +75,7 @@ while tcurr <= tstop:
     ucurr_2 = pid.control(wsp, wfcurr_2)
     # Assigning motor output: I/O (data out)
     mymotor_1.set_output(ucurr)
+    print(ucurr)
     mymotor_2.set_output(ucurr_2)
     # Updating output arrays
     t.append(tcurr)
@@ -95,5 +96,4 @@ del mymotor_1
 del mymotor_2
 
 
-print([w, wf, u])
 
