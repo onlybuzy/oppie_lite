@@ -88,6 +88,7 @@ while tcurr <= tstop:
     tprev = tcurr
     tprev_2 = tcurr
 
+print("Reversa")
 tcurr=0
 
 while tcurr <= tstop:
