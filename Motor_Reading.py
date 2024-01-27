@@ -38,6 +38,7 @@ while tcurr <= tstop:
     # Updating output arrays
     t.append(tcurr)
     theta.append(mymotor.get_angle())
+    print(theta)
     # Updating previous time value
     tprev = tcurr
 
