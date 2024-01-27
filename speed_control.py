@@ -126,7 +126,7 @@ while tcurr <= tstop+2:
     tprev = tcurr
     tprev_2 = tcurr
     
-while tcurr <= tstop+2:
+while tcurr <= tstop+4:
     # Pausing for `tsample` to give CPU time to process encoder signal
     time.sleep(tsample)
     # Getting current time (s)
