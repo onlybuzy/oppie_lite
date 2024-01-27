@@ -14,7 +14,7 @@ if option == 'sin':
     T = 2*tstop  # Period of sine wave (s)
     theta0 = thetamax  # Reference angle
 elif option == 'cos':
-    T = tstop  # Period of cosine wave (s)
+    T = tstop*3  # Period of cosine wave (s)
     theta0 = 0.5*thetamax  # Reference angle
 
 # Creating PID controller object
