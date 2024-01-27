@@ -95,8 +95,5 @@ del mymotor_1
 del mymotor_2
 
 
-# Plotting results
-plot_line(
-    [t]*3, [w, wf, u], marker=True, axes='multi',
-    yname=['Raw Speed (rad/s)', 'Filtered Speed (rad/s)', 'Control Output (-)'])
-plot_line(t[1::], 1000*np.diff(t), marker=True, yname='Sampling Period (ms)')
+print([w, wf, u])
+
