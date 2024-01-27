@@ -3,7 +3,7 @@ import numpy as np
 from gpiozero_extended import Motor,PID
 
 # Setting general parameters
-tstop = 1  # Execution duration (s)
+tstop = 5  # Execution duration (s)
 tsample = 0.01  # Sampling period (s)
 thetamax = 180  # Motor position amplitude (deg)
 
