@@ -88,6 +88,8 @@ while tcurr <= tstop:
     tprev = tcurr
     tprev_2 = tcurr
 
+tcurr=0
+
 while tcurr <= tstop:
     # Pausing for `tsample` to give CPU time to process encoder signal
     time.sleep(tsample)
