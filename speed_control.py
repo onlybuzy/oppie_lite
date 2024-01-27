@@ -89,6 +89,9 @@ while tcurr <= tstop:
     tprev_2 = tcurr
 
 print(tcurr)
+tcurr=0
+mymotor_1.reset_angle()
+mymotor_2.reset_angle()
 
 while tcurr <= tstop:
     # Pausing for `tsample` to give CPU time to process encoder signal
