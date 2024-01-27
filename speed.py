@@ -10,9 +10,9 @@ wsp = 20  # Motor speed set point (rad/s)
 tau = 0.1  # Speed low-pass filter response time (s)
 
 # Creating PID controller object
-kp = 0.15
-ki = 0.35
-kd = 0.01
+kp = 0.036
+ki = 0.379
+kd = 0.0009
 taupid=0.01
 pid = PID(tsample, kp, ki, kd, umin=0, tau=taupid)
 
@@ -44,7 +44,6 @@ while tcurr <= tstop:
     tcurr = time.perf_counter() - tstart
     # Getting motor shaft angular position: I/O (data in)
     thetacurr = mymotor.get_angle()
-    print(thetacurr)
     # Calculating motor speed (rad/s)
     wcurr = np.pi/180 * (thetacurr-thetaprev)/(tcurr-tprev)
     # Filtering motor speed signal
