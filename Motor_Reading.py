@@ -48,10 +48,4 @@ del mymotor
 
 # Calculating motor angular velocity (rpm)
 w = 60/360 * np.gradient(theta, t)
-
-# Plotting results
-plot_line([t, t, t[1::]], [theta, w, 1000*np.diff(t)], axes='multi',
-          yname=[
-              'Angular Position (deg.)',
-              'Angular velocity (rpm)',
-              'Sampling Period (ms)'])
+print(w)
