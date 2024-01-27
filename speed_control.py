@@ -8,7 +8,7 @@ from gpiozero_extended import Motor, PID
 # Setting general parameters
 tstop = 2  # Execution duration (s)
 tsample = 0.01  # Sampling period (s)
-wsp = 8  # Motor speed set point (rad/s)
+wsp = 12  # Motor speed set point (rad/s)
 tau = 0.1  # Speed low-pass filter response time (s)
 
 # Creating PID controller object
