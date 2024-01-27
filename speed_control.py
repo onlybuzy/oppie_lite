@@ -94,7 +94,6 @@ tcurr=0
 
 while tcurr <= tstop+2:
     # Pausing for `tsample` to give CPU time to process encoder signal
-    print('si')
     time.sleep(tsample)
     # Getting current time (s)
     tcurr = time.perf_counter() - tstart
@@ -110,8 +109,8 @@ while tcurr <= tstop+2:
     wfprev = wfcurr
     wfprev_2 = wfcurr_2
     # Calculating closed-loop output
-    ucurr = pid.control(-wsp, wfcurr)
-    ucurr_2 = pid.control(-wsp, wfcurr_2)
+    ucurr = pid.control(8, wfcurr)
+    ucurr_2 = pid.control(8, wfcurr_2)
     # Assigning motor output: I/O (data out)
     mymotor_1.set_output(ucurr)
     print(wfcurr_2)
