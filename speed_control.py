@@ -90,11 +90,11 @@ while tcurr <= tstop:
 
 print(tcurr)
 tcurr=0
-mymotor_1.reset_angle()
-mymotor_2.reset_angle()
 
-while tcurr <= tstop:
+
+while tcurr <= tstop+2:
     # Pausing for `tsample` to give CPU time to process encoder signal
+    print('si')
     time.sleep(tsample)
     # Getting current time (s)
     tcurr = time.perf_counter() - tstart
