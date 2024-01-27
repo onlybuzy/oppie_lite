@@ -88,6 +88,40 @@ while tcurr <= tstop:
     tprev = tcurr
     tprev_2 = tcurr
 
+while tcurr <= tstop:
+    # Pausing for `tsample` to give CPU time to process encoder signal
+    time.sleep(tsample)
+    # Getting current time (s)
+    tcurr = time.perf_counter() - tstart
+    # Getting motor shaft angular position: I/O (data in)
+    thetacurr = mymotor_1.get_angle()
+    thetacurr_2 = mymotor_2.get_angle()
+    # Calculating motor speed (rad/s)
+    wcurr = np.pi/180 * (thetacurr-thetaprev)/(tcurr-tprev)
+    wcurr_2 = np.pi/180 * (thetacurr_2-thetaprev_2)/(tcurr-tprev_2)
+    # Filtering motor speed signal
+    wfcurr = tau/(tau+tsample)*wfprev + tsample/(tau+tsample)*wcurr
+    wfcurr_2 = tau/(tau+tsample)*wfprev + tsample/(tau+tsample)*wcurr_2
+    wfprev = wfcurr
+    wfprev_2 = wfcurr_2
+    # Calculating closed-loop output
+    ucurr = pid.control(-wsp, wfcurr)
+    ucurr_2 = pid.control(-wsp, wfcurr_2)
+    # Assigning motor output: I/O (data out)
+    mymotor_1.set_output(ucurr)
+    print(wfcurr_2)
+    mymotor_2.set_output(ucurr_2)
+    # Updating output arrays
+    t.append(tcurr)
+    w.append(wcurr)
+    wf.append(wfcurr)
+    u.append(ucurr)
+    # Updating previous values
+    thetaprev = thetacurr
+    thetaprev_2 = thetacurr_2
+    tprev = tcurr
+    tprev_2 = tcurr
+
 print('Done.')
 # Stopping motor and releasing GPIO pins
 mymotor_1.set_output(0, brake=True)
