@@ -6,7 +6,7 @@ from utils import plot_line
 from gpiozero_extended import Motor, PID
 
 # Setting general parameters
-tstop = 4  # Execution duration (s)
+tstop = 2  # Execution duration (s)
 tsample = 0.01  # Sampling period (s)
 wsp = 12  # Motor speed set point (rad/s)
 tau = 0.1  # Speed low-pass filter response time (s)
@@ -88,8 +88,7 @@ while tcurr <= tstop:
     tprev = tcurr
     tprev_2 = tcurr
 
-print("Reversa")
-tcurr=0
+print(tcurr)
 
 while tcurr <= tstop:
     # Pausing for `tsample` to give CPU time to process encoder signal
