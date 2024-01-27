@@ -90,8 +90,9 @@ while tcurr <= tstop:
 print('Done.')
 # Stopping motor and releasing GPIO pins
 mymotor_1.set_output(0, brake=True)
+mymotor_2.set_output(0,brake=True)
 del mymotor_1
-
+del mymotor_2
 
 
 # Plotting results
