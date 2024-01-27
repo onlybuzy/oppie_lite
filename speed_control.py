@@ -12,8 +12,8 @@ wsp = 20  # Motor speed set point (rad/s)
 tau = 0.1  # Speed low-pass filter response time (s)
 
 # Creating PID controller object
-kp = 0.15
-ki = 0.5
+kp = 16
+ki = 20
 kd = 0.01
 taupid = 0.01
 pid = PID(tsample, kp, ki, kd, umin=0, tau=taupid)
