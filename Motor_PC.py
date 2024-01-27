@@ -1,7 +1,6 @@
 import time
 import numpy as np
-from Motor_ENC import Motor
-from PID import PID
+from gpiozero_extended import Motor,PID
 
 # Setting general parameters
 tstop = 1  # Execution duration (s)
