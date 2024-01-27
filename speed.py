@@ -21,7 +21,7 @@ pid = PID(tsample, kp, ki, kd, umin=0, tau=taupid)
 # Integrated encoder on GPIO pins 24 and 25.
 mymotor = Motor(
     enable1=17, pwm1=27, pwm2=22,
-    encoder1=23, encoder2=24, encoderppr=300.8)
+    encoder1=25, encoder2=8, encoderppr=300.8)
 mymotor.reset_angle()
 
 # Initializing previous and current values
@@ -52,6 +52,7 @@ while tcurr <= tstop:
     wfprev = wfcurr
     # Calculating closed-loop output
     ucurr = pid.control(wsp, wfcurr)
+    print(ucurr)
     # Assigning motor output: I/O (data out)
     mymotor.set_output(ucurr)
     # Updating previous values
