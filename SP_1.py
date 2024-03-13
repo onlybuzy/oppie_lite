@@ -51,6 +51,7 @@ while tcurr <= tstop:
     wfprev = wfcurr
     # Calculating closed-loop output
     ucurr = pid.control(wsp, wfcurr)
+    print(ucurr)
     # Assigning motor output: I/O (data out)
     mymotor.set_output(ucurr)
     # Updating previous values
